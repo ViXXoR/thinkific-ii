@@ -6,6 +6,7 @@ services:
   #    - ALLOW_EMPTY_PASSWORD=yes
 
   myapp:
+    user: root
     tty: true # Enables debugging capabilities when attached to this container.
     image: docker.io/bitnami/rails:6-debian-10
     environment:
@@ -15,6 +16,6 @@ services:
     #depends_on:
     #  - mariadb
     ports:
-      - 3000:3000
+      - 3001:3000
     volumes:
-      - .:/app
+      - /srv/containers/ii-api:/app
